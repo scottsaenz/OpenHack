@@ -1,0 +1,49 @@
+    {
+      "name" : "tm5ch2-postman-indexer",
+      "dataSourceName" : "team5ch2datasource",
+      "targetIndexName" : "tm5-ch2-indexpostman",
+      "disabled": null,
+  "schedule": null,
+  "parameters": {
+    "batchSize": null,
+    "maxFailedItems": 0,
+    "maxFailedItemsPerBatch": 0,
+    "base64EncodeKeys": null,
+    "configuration": {
+      "dataToExtract": "contentAndMetadata",
+      "parsingMode": "default"
+    }
+  },
+  "fieldMappings": [
+    {
+      "sourceFieldName": "metadata_storage_path",
+      "targetFieldName": "id",
+      "mappingFunction": {
+        "name": "base64Encode"
+      }
+    },
+		{
+			"sourceFieldName": "metadata_storage_path",
+      "targetFieldName": "url"
+		},
+		{
+			"sourceFieldName": "metadata_storage_size",
+      "targetFieldName": "size"
+		},
+		{
+			"sourceFieldName": "metadata_storage_last_modified",
+      "targetFieldName": "last_modified"
+		},
+		{
+			"sourceFieldName": "content",
+      "targetFieldName": "content"
+		},
+		{
+			"sourceFieldName": "metadata_storage_name",
+      "targetFieldName": "file_name"
+		}
+  ],
+  "outputFieldMappings": [],
+  "cache": null,
+  "encryptionKey": null
+}
